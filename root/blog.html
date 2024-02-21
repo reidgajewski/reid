@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<!-- Hello there -->
+<!-- This website looks like it was built with squarespace - especially the mobile nav ;( -->
+<!-- Since I study computer science, that would be embarassing -->
+<!-- Rest assured the website is custom built with a mixture of tailwind and vanilla css -->
+<!-- leetcode with me: leetcode.com/reidg/ -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- nav bar underline -->
+    <style>
+      /* Custom styles for the sliding underline effect */
+      .nav-link {
+        position: relative;
+        padding-bottom: 2px; /* Adjusts the space for the underline */
+        overflow: hidden; /* Ensures the pseudo-element is clipped to the link's width */
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        right: 0; /* Anchor the pseudo-element to the right */
+        bottom: 0;
+        width: 100%;
+        height: 1px; /* Height of the underline */
+        background-color: white; /* Color of the underline */
+        transform: scaleX(0);
+        transform-origin: bottom right; /* Starts scaling from the right */
+        transition: transform 0.3s ease-in-out; /* Adjusts the speed and easing of the animation */
+      }
+    
+      .nav-link:hover::after,
+      .nav-link:focus::after { /* Added focus for accessibility */
+        transform: scaleX(1);
+        transform-origin: bottom left; /* Starts scaling from the left */
+      }
+    </style>
+
+    <!-- hamburger menua and drawer animation -->
+    <style>
+
+      /* Hamburger Menu Animation */
+      .hamburger-active .hamburger-line {
+        background-color: transparent; /* Hide top and bottom lines */
+      }
+
+      .hamburger-active .hamburger-middle-line {
+        transform: rotate(180deg); /* Rotate middle line */
+        background-color: #F42C04; /* Change color if needed */
+      }
+
+
+      .hamburger-line, .hamburger-middle-line {
+        transition: transform 0.3s ease, background-color 0.45s ease;
+      }
+
+      /* Drawer Fade-in Animation */
+      #menuDrawer {
+        transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out;
+      }
+
+    </style>
+
+
+</head>
+<body class="">
+
+  <div class="logo-container absolute top-8 left-4 md:top-8 md:left-8 z-50">
+    <a href="./index.html">
+    <span class="logo font-bold font-reidd text-3xl lg:text-3xl no-underline ">RG&nbsp;</span>
+    </a>
+  </div>
+  
+  <nav class="hidden md:block font-reid absolute top-0 mt-10 right-11 ">
+      <ul class="flex space-x-10">
+        <li><a href="./index.html" class="nav-link text-white hover:text-gray-300">HOME</a></li>
+        <li><a href="./writing.html" class="nav-link text-white hover:text-gray-300">WRITING</a></li>
+        <li><a href="./index.html" class="nav-link text-white hover:text-gray-300">EXPERIENCE</a></li>
+      </ul>
+    </nav>
+  
+  
+  
+  <!-- mobile menu -->
+  <!-- Hamburger Icon -->
+  <div class="md:hidden flex items-center justify-end pt-10 px-4 bg-[#E3DED9] z-50">
+  
+      <button id="hamburger" class="hamburger flex flex-col space-y-1.5" aria-label="Open menu">
+          <!-- Top line -->
+          <span class="hamburger-line block w-6 h-0.5 bg-black transform-gpu"></span>
+          <!-- Middle line (will be hidden) -->
+          <span class="hamburger-middle-line block w-6 h-0.5 bg-black transform-gpu opacity-100 transition-opacity"></span>
+          <!-- Bottom line -->
+          <span class="hamburger-line block w-6 h-0.5 bg-black transform-gpu"></span>
+      </button>
+  </div>
+  
+<!-- drawer -->
+<div id="menuDrawer" class="fixed top-0 right-full h-full w-full bg-black opacity-0 invisible flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
+  <button id="closeDrawer" class="absolute top-7 pt-1 right-4" aria-label="Close menu">
+      <span class="arrow block  text-3xl text-[#F42C04]">←</span> <!-- Customize this arrow as needed -->
+  </button>
+  <!-- Links container -->
+  <div class="text-center">
+      <a href="./index.html" class="font-reid text-white text-4xl font-light hover:text-gray-500 py-4 block">HOME</a>
+      <a href="./writing.html" class="font-reid text-white text-4xl font-light hover:text-gray-500 py-4 block">WRITING</a>
+      <a href="./resume.html" class="font-reid text-white text-4xl font-light hover:text-gray-500 py-4 block">EXPERIENCE</a>
+      <!-- More links as needed -->
+  </div>
+</div>
+
+      
+  <div class="min-h-screen flex flex-col md:flex-row">
+    <div class="flex-1 bg-[#E3DED9] flex flex-col items-start md:items-center justify-center pb-10 pt-10 md:pb-0 md:pt-0">
+      <!-- Left half content -->
+      <h1 class="font-reidd text-5xl md:text-4xl lg:text-6xl xl:text-7xl font-extralight mb-4 tracking-wider pl-4 md:pl-8">THE REGIONAL BANKING CRISIS: EXPLAINED<span class="animate-pulse-fast">_</span></h1>
+   
+
+    </div>
+    <div class="flex-1 bg-[#000000] flex justify-center items-center">
+        <img src="assets/graphic.svg" alt="Graphic" class="w-3/5 md:w-2/3 lg:w-3/5 animate-spin-slow">
+    </div>
+  </div>
+
+
+<section class="bg-[#e3ded989]">
+    <div class="max-w-4xl mx-auto pt-20 pb-10 px-4">
+
+        <div class="text-lg space-y-6">
+            <p>In the Spring of 2023, a handful of regional banks suddenly collapsed: First Republic Bank, Signature Bank, and perhaps most notably, Silicon Valley Bank (SVB). Panic tore through the nation as depositors questioned the stability of the US financial system, and speculation of a disastrous financial contagion event exacerbated the already tense situation.</p>
+            
+            <p>But why did this happen so suddenly? The US was long out of the COVID-19 recession, supply chain difficulties were easing, unemployment was at a 54-year low, inflation cooled to 5% from its 9% peak in 2022, and equities were ripping. A so-called “soft landing” seemed inevitable.</p>
+            
+            <p>The story starts in 2019.</p>
+            
+            <p>For all intents and purposes, the US shut down at the onset of the COVID-19 pandemic. GDP fell more than 9% in Q2 2020 and unemployment jumped from 3.6% to 14.8%. Was it the right move to shut down the world? In hindsight probably not, though I’m no expert in public health, much less infectious diseases… but I digress. In times of economic turmoil, policy makers turn to economic stimulus to revive a slowing economy. Policy makers effectively have three stimulating monetary policy levers to pull, which I’ll denote as MP1, MP2, and MP3.</p>
+
+            <p> MP1 (interest rate driven monetary policy): <br>
+                Interest rate driven monetary policy is broadly accepted as the most effective MP measure as it has the broadest impact on the economy. MP1, which in this case was reducing the federal funds rate, has 3 main effects: <br><br>
+                
+                1. Drive up the value of investments (your stock portfolio). <br>
+                2. Makes it cheaper and easier to borrow money. <br>
+                3. Reduces debt service burdens. <br><br>
+                
+                However, MP1 is no longer an option when short term rates hit 0% as you cannot lower rates any further. If interest rates are already low, as they were at the onset of the pandemic, MP1 may not sufficiently stimulate the economy to the extent necessary. This brings us to MP2.
+                </p>
+
+            <p>MP2 (Quantitative Easing): <br>
+                Quantitative easing is when the central bank purchases financial assets, typically debt assets, from creditors (debt holders). When a central bank buys a financial asset, it provides liquidity to the creditor who can then use the cash to invest in other assets they deem more attractive. The key here is what they do with their new found liquidity. If the cash goes towards productive assets, i.e. anything that finances spending, it stimulates the economy. However, if the cash goes towards financial assets, then there must be substantial market gains before any of the money trickles down to the rest of the economy such that it can be spent.
+                </p>
+
+            <p>MP3 (Helicopter money): <br>
+                If liquidity from MP2 fails to finance spending, MP3 is the “break glass in case of emergency” option. There are many derivatives of MP3, but all of them basically put cash in the hands of consumers. The goal is simple, give people money so they can spend it. 
+                <br><br>
+                Okay, back to the story.
+            </p>
+
+            <p>As the coronavirus swept through the US, widespread lockdowns were implemented, effectively bringing the US economy to a halt. During this period, the federal funds rate was approximately 1.5%, but was swiftly reduced to zero (MP1) on March 15, 2020. Given the acute situation and already low interest rates, this 150 basis point reduction had limited potential to stimulate the economy. Recognizing this, the Federal Reserve on that same day initiated the purchase of $700 billion in government and mortgage-related bonds, injecting liquidity into the financial system (MP2). Throughout the pandemic, the Fed continued with its MP2 prescription, providing more than $4 trillion in liquidity. In addition to MP1 and MP2, policy makers undertook the largest government relief effort in recorded history by putting $5 trillion directly into the hands of consumers and businesses (MP3). The US government pulled hard on all three monetary policy levers, introducing an unprecedented amount of liquidity into the system.</p>
+            
+            <p>So, where does all the money go? Primarily, it ends up in banks. While this is somewhat of an oversimplification considering the variety of market options like the equity, commodity, and money markets, it's fair to say that a significant portion of the cash found its way to banks through deposits. How banks manage these deposits is essential to understanding the entire crisis. </p>
+            
+            <p>We must remember that banks are businesses. They have shareholders like any other company, and have a fiduciary responsibility to maximize shareholder value. In effect, banks cannot simply sit on the sidelines with a pile of cash, they must deploy capital effectively to generate returns for their depositors and shareholders, while having enough left over to cover operating expenses. The primary mechanism to generate said returns is through loans. In the simplest terms, banks make money from the spread between the interest rate paid to depositors and the interest they receive on the loans they make. Still, they must maintain some degree of liquidity so when depositors make a withdrawal, they’re given cash, not ownership over someone's mortgage. This is outlined under various regulatory frameworks, including Basel III, which requires banks to meet a specified Liquidity Coverage Ratio (LCR). So what is liquidity in the context of these regulations? It’s not just cash, it’s any asset that is deemed as a high-quality liquid asset (HQLA). US Treasuries are considered Level 1 HQLA, meaning they are highly liquid and can be converted into cash quickly. So while holding cash does contribute to a bank’s liquidity, investing in Treasuries helps banks meet regulatory requirements while still earning interest on those bonds. Silicon Valley Bank, First Republic Bank, and Signature Bank invested heavily in these Treasuries, and this is where the trouble begins. But before it all comes crashing down, we must talk about inflation. </p>
+        
+            <p>COVID-19, and the following cascade of lockdowns, monetary policy measures and global supply chain disruptions, created the worst inflationary environment seen in decades. With MP1 grounding interest rates to zero, MP2 providing more than $4 trillion in liquidity, and MP3 putting $5 trillion of cash into the hands of consumers and businesses, a frothy, bubbly, inflationary environment emerged. Global supply chain disruptions spanning from semiconductors and automobiles to fertilizer and oil did nothing to improve the situation. While it's not terribly relevant to discuss the economic theory of exactly how inflation occurred, it's important to know that inflation was sticky, and peaked at 9% YoY. Let’s also remember that while banks would normally lend to generate returns, the uncertain economic outlook and the low interest rate environment made traditional lending less attractive. Banks like Silicon Valley Bank, First Republic Bank, and Signature Bank turned to Treasuries and other government securities, which despite offering low yields, provided a “safe” haven for parking excess liquidity while still meeting regulatory requirements.
+            </p>
+
+            <p>Now let's finally get to the crisis. </p>
+
+            <p>The US Federal Reserve has a dual mandate, to maximize employment and keep prices stable. Thus as banks were loading up on treasuries, the Fed was devising a plan to combat inflation. At the forefront of this plan was raising the fed funds rate from 0, or the inverse of MP1 that we saw at the onset of COVID-19. Higher interest rates makes borrowing money more difficult, reduces the present value of future earnings for equities (making stocks, especially growth stocks, go down), increases debt service burdens, and lowers the market value of government securities issued in a lower interest rate environment. The impact of higher rates on government securities is what we need to pay attention to. 
+            </p>
+
+            <p>To grasp why the value of Treasuries fall as interest rates rise, it’s essential to understand how these government bonds work. Treasuries are essentially loans to the government: when you buy a Treasury bond, you're lending money to the government in exchange for a promise to be paid back the principal amount plus interest over a specified period. If held to maturity, the creditor (bondholder) is guaranteed to receive the principal amount plus the interest agreed upon at the time of purchase, which is a straightforward and secure investment under normal circumstances, especially if risk is managed based on the bond’s duration.</p>
+        
+            <p>However, the situation changes if the creditor decides to sell the bond before it matures. In this case, the bond must be sold at its current market value, which can fluctuate based on several factors, including changes in interest rates. When interest rates rise, new bonds are issued with interest rates to reflect the current cost of borrowing. This renders older bonds, with their lower interest rates, less attractive in comparison. Consequently, the market value of the older bond drops.</p>
+        
+            <p>The inverse relationship between bond values and interest rates is a fundamental principle of bond investing, and is known as rate-risk. As the Federal Reserve raises interest rates to combat inflation, as was the case post-COVID-19, the immediate effect is to make borrowing more expensive, which cools off an overheated economy. But a side effect is the depreciation in the market value of existing bonds. For banks that loaded up on Treasuries and MBS (mortgage backed securities) during the low-interest period, this meant that the mark-to-market value of their assets decreased. Although these losses are unrealized if the bonds are held to maturity, the need for liquidity or regulatory assessments requiring mark-to-market valuations can force institutions to recognize these losses, impacting their financial health or in this case, their solvency.</p>
+            
+            <p>This write up is already way longer than I intended, so for the sake of brevity, I will just cover the events that unfolded at Silicon Valley Bank. However, very similar situations occurred at every other bank involved in the crisis, so this should suffice as an understanding of the regional banking crisis generally. 
+            </p>
+
+            <p>Between 2020 and 2022 Silicon Valley Bank experienced a massive influx of deposits due to the large amounts of liquidity in the system, as we discussed previously. This resulted in the purchase of over $90 billion in Treasuries and mortgage-backed securities (MBS). Presumably to maximize yield, these securities were long dated and marked as hold to maturity (HTM), meaning the bank had no intention of selling them. Since they were HTM, these securities were not subject to mark-to-market accounting, and the true financial wellbeing of the bank was unclear, even as the real value of the bonds and MBS declined when the Federal Reserve decided to raise interest rates due to inflationary pressures. While this alone does not spell disaster, SVB's risk management showcased a textbook case of duration mismatch: a scenario where the bank's liabilities become due before its assets can mature. Faced with mounting withdrawal obligations, the bank's CEO publicly announced a drastic "restructuring" of its balance sheet. This included the sale of $21 billion in securities, resulting in a loss of $1.8 billion. In addition to reporting the realized loss, the bonds and MBS could no longer be considered HTM.  Instead, they had to be categorized as “available for sale”, realizing an additional $20 billion of loss. News of these significant losses sent shockwaves through the depositor community, triggering a frantic rush to take out funds. To fulfill these sudden withdrawal obligations, SVB found itself in a precarious position. It would be forced into a cycle of selling more assets, leading to further losses, leading to even more withdrawals - a death spiral that precipitated a classic "run on the bank" situation. Just days after unveiling its balance sheet restructuring plan, the situation escalated beyond recovery. Regulators shut down SVB and placed it into receivership.
+            </p>
+
+            <p>As news of SVB’s collapse spread, a wave of panic washed over bank depositors nationwide. Were their funds at risk too? This fear triggered similar “run on the bank” events at First Republic and Signature Bank, leading to their subsequent failures. With more banks in the crisis’s crossheirs, an isolated incident turned into real systemic risk, the dreaded contagion effect. In an effort to stabilize the situation, the Federal Reserve acted swiftly, introducing the Bank Term Funding Program (BTFP) on March 12, a mere two days following SVB's downfall. The crisis was temporarily put to rest, but what will happen when the BTFP expires in March of 2024? Time, as always, holds the answer.</p>
+        
+        </div>
+    </div>
+</section>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const menuDrawer = document.getElementById('menuDrawer');
+      const closeDrawer = document.getElementById('closeDrawer');
+  
+      // Toggle drawer and animate hamburger
+      hamburger.addEventListener('click', function() {
+          // Toggle classes for drawer
+          menuDrawer.classList.toggle('right-full');
+          menuDrawer.classList.toggle('right-0');
+          menuDrawer.classList.toggle('opacity-0');
+          menuDrawer.classList.toggle('opacity-100');
+          menuDrawer.classList.toggle('invisible');
+          menuDrawer.classList.toggle('visible');
+          
+          // Animate hamburger
+          hamburger.classList.toggle('hamburger-active');
+      });
+  
+      // Close drawer and reset hamburger animation
+      closeDrawer.addEventListener('click', function() {
+          menuDrawer.classList.add('right-full');
+          menuDrawer.classList.remove('right-0');
+          menuDrawer.classList.add('opacity-0');
+          menuDrawer.classList.remove('opacity-100');
+          menuDrawer.classList.add('invisible');
+          menuDrawer.classList.remove('visible');
+          
+          hamburger.classList.remove('hamburger-active');
+      });
+  });
+  
+  </script>
+
+</body>
+</html>

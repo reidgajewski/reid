@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<!-- Hello there -->
+<!-- This website looks like it was built with squarespace - especially the mobile nav ;( -->
+<!-- Since I study computer science, that would be embarassing -->
+<!-- Rest assured the website is custom built with a mixture of tailwind and vanilla css -->
+<!-- leetcode with me: leetcode.com/reidg/ -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- nav bar underline -->
+    <style>
+      /* Custom styles for the sliding underline effect */
+      .nav-link {
+        position: relative;
+        padding-bottom: 2px; /* Adjusts the space for the underline */
+        overflow: hidden; /* Ensures the pseudo-element is clipped to the link's width */
+      }
+    
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        right: 0; /* Anchor the pseudo-element to the right */
+        bottom: 0;
+        width: 100%;
+        height: 1px; /* Height of the underline */
+        background-color: white; /* Color of the underline */
+        transform: scaleX(0);
+        transform-origin: bottom right; /* Starts scaling from the right */
+        transition: transform 0.3s ease-in-out; /* Adjusts the speed and easing of the animation */
+      }
+    
+      .nav-link:hover::after,
+      .nav-link:focus::after { /* Added focus for accessibility */
+        transform: scaleX(1);
+        transform-origin: bottom left; /* Starts scaling from the left */
+      }
+    </style>
+
+    <!-- hamburger menua and drawer animation -->
+    <style>
+
+      /* Hamburger Menu Animation */
+      .hamburger-active .hamburger-line {
+        background-color: transparent; /* Hide top and bottom lines */
+      }
+
+      .hamburger-active .hamburger-middle-line {
+        transform: rotate(180deg); /* Rotate middle line */
+        background-color: #F42C04; /* Change color if needed */
+      }
+
+
+      .hamburger-line, .hamburger-middle-line {
+        transition: transform 0.3s ease, background-color 0.45s ease;
+      }
+
+      /* Drawer Fade-in Animation */
+      #menuDrawer {
+        transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out;
+      }
+
+    </style>
+
+    <!-- blog title underline -->
+    <style>
+.blog-title-span {
+    position: relative;
+    cursor: pointer;
+}
+
+.blog-title-span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Consistent with your blog title span height */
+    bottom: -3px; /* Adjust based on your font size and preferences */
+    left: 0;
+    background-color: #000; /* Adjust underline color as needed */
+    transform: scaleX(0);
+    transform-origin: bottom right; /* Start scaling from the right for the reveal effect */
+    transition: transform 0.35s ease-in-out; /* Match the speed you desire */
+}
+
+.blog-title-span:hover::after,
+.blog-title-span:focus::after { /* Added focus for accessibility */
+    transform: scaleX(1);
+    transform-origin: bottom left; /* Ensures the underline retracts to the left on mouse leave */
+}
+
+    </style>
+
+
+</head>
+<body class="">
+
+<div class="logo-container absolute top-8 left-4 md:top-8 md:left-8 z-50">
+  <a href="./index.html">
+  <span class="logo font-bold font-reidd text-3xl lg:text-3xl no-underline ">RG&nbsp;</span>
+  </a>
+</div>
+  
+  <nav class="hidden md:block font-reid absolute top-0 mt-10 right-11 ">
+      <ul class="flex space-x-10">
+        <li><a href="./index.html" class="nav-link text-white hover:text-gray-300">HOME</a></li>
+        <li><a href="./writing.html" class="nav-link text-white hover:text-gray-300">WRITING</a></li>
+        <li><a href="./index.html" class="nav-link text-white hover:text-gray-300">EXPERIENCE</a></li>
+      </ul>
+    </nav>
+  
+  
+  
+  <!-- mobile menu -->
+  <!-- Hamburger Icon -->
+  <div class="md:hidden flex items-center justify-end pt-10 px-4 bg-[#E3DED9] z-50">
+  
+      <button id="hamburger" class="hamburger flex flex-col space-y-1.5" aria-label="Open menu">
+          <!-- Top line -->
+          <span class="hamburger-line block w-6 h-0.5 bg-black transform-gpu"></span>
+          <!-- Middle line (will be hidden) -->
+          <span class="hamburger-middle-line block w-6 h-0.5 bg-black transform-gpu opacity-100 transition-opacity"></span>
+          <!-- Bottom line -->
+          <span class="hamburger-line block w-6 h-0.5 bg-black transform-gpu"></span>
+      </button>
+  </div>
+  
+<!-- drawer -->
+<div id="menuDrawer" class="fixed top-0 right-full h-full w-full bg-black opacity-0 invisible flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
+  <button id="closeDrawer" class="absolute top-7 pt-1 right-4" aria-label="Close menu">
+      <span class="arrow block  text-3xl text-[#F42C04]">←</span> <!-- Customize this arrow as needed -->
+  </button>
+  <!-- Links container -->
+  <div class="text-center">
+      <a href="./index.html" class="font-reid text-white text-4xl font-light hover:text-gray-500 py-4 block">HOME</a>
+      <a href="./writing.html" class="font-reid text-white text-4xl font-light hover:text-gray-500 py-4 block">WRITING</a>
+      <a href="./resume.html" class="font-reid text-white text-4xl font-light hover:text-gray-500 py-4 block">EXPERIENCE</a>
+      <!-- More links as needed -->
+  </div>
+</div>
+
+
+
+
+      
+  <div class="min-h-screen flex flex-col md:flex-row">
+    <div class="flex-1 bg-[#E3DED9] flex flex-col items-start  justify-center pb-10 pt-10 md:pb-0 md:pt-0">
+      <!-- Left half content -->
+      <h1 class="font-reidd text-5xl md:text-4xl lg:text-6xl xl:text-7xl font-extralight mb-4 tracking-wider pl-4 md:pl-8 ">WRITING<span class="animate-pulse-fast">_</span></h1>
+      <p class="font-reid text-md md:text-lg font-medium mb-4 tracking-wider  pl-4 md:pl-8 max-w-sm md:max-w-xl lg:max-w-3xl">It is through the process of writing that I internalize my learnings, transforming abstract ideas into concrete insights.<span class="animate-pulse-fast"></span></h1>
+
+    </div>
+    <div class="flex-1 bg-[#000000] flex justify-center items-center">
+        <img src="assets/graphic.svg" alt="Graphic" class="w-3/5 md:w-2/3 lg:w-3/5 animate-spin-slow">
+    </div>
+  </div>
+
+  <!-- blog posts -->
+  <div class="bg-[#E3DED9] text-black p-8 pb-14 pt-20 md:pt-28">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Blog Post 1 -->
+      <div class="mb-8 font-reid">
+        <div class="mb-3">
+          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block ">Short Essay</span>
+        </div>
+        <a href="./blog.html">
+        <h2 class="font-reid text-3xl font-bold mb-3"><span class="blog-title-span">The Regional Banking Crisis: Explained</span></h2>
+        </a>
+        <div class="inline-block mb-3">
+          <span class="font-reid inline-block mr-4">Reid Gajewski</span>
+          <span class="font-reid inline-block">February 19, 2024</span>
+        </div>
+        <hr class="border-gray-700 my-4"/>
+      </div>
+      
+      <!-- Blog Post 2 -->
+      <div class="mb-8 font-reid">
+        <div class="mb-3">
+          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block">Coming Soon</span>
+        </div>
+       
+        <h2 class=" text-3xl font-bold mb-3"><span class="blog-title-span">What's at the End of the Universe?</span></h2>
+  
+        <div class="inline-block mb-3">
+          <span class="inline-block mr-4">Reid Gajewski</span>
+          <span class="inline-block">February 26, 2024</span>
+        </div>
+        <hr class="border-gray-700 my-4"/>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div class="mb-8 font-reid">
+        <div class="mb-3">
+          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block">Coming Soon</span>
+        </div>
+       
+        <h2 class=" text-3xl font-bold mb-3"><span class="blog-title-span">Why GPUs Are AI's Best Friend</span></h2>
+  
+        <div class="inline-block mb-3">
+          <span class="inline-block mr-4">Reid Gajewski</span>
+          <span class="inline-block">March 2, 2024</span>
+        </div>
+        <hr class="border-gray-700 my-4"/>
+      </div>
+
+      <!-- Blog Post 4 -->
+      <div class="mb-8 font-reid">
+        <div class="mb-3">
+          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block">Coming Soon</span>
+        </div>
+       
+        <h2 class=" text-3xl font-bold mb-3"><span class="blog-title-span">The Economics of Drug Development</span></h2>
+  
+        <div class="inline-block mb-3">
+          <span class="inline-block mr-4">Reid Gajewski</span>
+          <span class="inline-block">March 9, 2024</span>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  
+  
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const menuDrawer = document.getElementById('menuDrawer');
+      const closeDrawer = document.getElementById('closeDrawer');
+  
+      // Toggle drawer and animate hamburger
+      hamburger.addEventListener('click', function() {
+          // Toggle classes for drawer
+          menuDrawer.classList.toggle('right-full');
+          menuDrawer.classList.toggle('right-0');
+          menuDrawer.classList.toggle('opacity-0');
+          menuDrawer.classList.toggle('opacity-100');
+          menuDrawer.classList.toggle('invisible');
+          menuDrawer.classList.toggle('visible');
+          
+          // Animate hamburger
+          hamburger.classList.toggle('hamburger-active');
+      });
+  
+      // Close drawer and reset hamburger animation
+      closeDrawer.addEventListener('click', function() {
+          menuDrawer.classList.add('right-full');
+          menuDrawer.classList.remove('right-0');
+          menuDrawer.classList.add('opacity-0');
+          menuDrawer.classList.remove('opacity-100');
+          menuDrawer.classList.add('invisible');
+          menuDrawer.classList.remove('visible');
+          
+          hamburger.classList.remove('hamburger-active');
+      });
+  });
+  
+  </script>
+
+</body>
+</html>
