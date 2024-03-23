@@ -960,10 +960,6 @@ video {
   text-align: justify;
 }
 
-.font-custom1 {
-  font-family: Custom-1, cursive;
-}
-
 .font-reid {
   font-family: "IBM Plex Mono", monospace;
 }
@@ -1072,12 +1068,6 @@ video {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@font-face {
-  font-family: "Custom-1";
-
-  src: url("/font/NewTegomin-Regular.ttf");
 }
 
 .hover\:text-gray-300:hover {

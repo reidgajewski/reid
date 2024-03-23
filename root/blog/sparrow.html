@@ -13,7 +13,6 @@
     <title>Personal Website</title>
     <link rel="stylesheet" href="style.css">
 
-
     <!-- nav bar underline -->
     <style>
       /* Custom styles for the sliding underline effect */
@@ -22,7 +21,7 @@
         padding-bottom: 2px; /* Adjusts the space for the underline */
         overflow: hidden; /* Ensures the pseudo-element is clipped to the link's width */
       }
-    
+
       .nav-link::after {
         content: '';
         position: absolute;
@@ -68,43 +67,15 @@
 
     </style>
 
-    <!-- blog title underline -->
-    <style>
-.blog-title-span {
-    position: relative;
-    cursor: pointer;
-}
-
-.blog-title-span::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px; /* Consistent with your blog title span height */
-    bottom: -3px; /* Adjust based on your font size and preferences */
-    left: 0;
-    background-color: #000; /* Adjust underline color as needed */
-    transform: scaleX(0);
-    transform-origin: bottom right; /* Start scaling from the right for the reveal effect */
-    transition: transform 0.35s ease-in-out; /* Match the speed you desire */
-}
-
-.blog-title-span:hover::after,
-.blog-title-span:focus::after { /* Added focus for accessibility */
-    transform: scaleX(1);
-    transform-origin: bottom left; /* Ensures the underline retracts to the left on mouse leave */
-}
-
-    </style>
-
 
 </head>
 <body class="">
 
-<div class="logo-container absolute top-8 left-4 md:top-8 md:left-8 z-50">
-  <a href="./index.html">
-  <span class="logo font-bold font-reidd text-3xl lg:text-3xl no-underline ">RG&nbsp;</span>
-  </a>
-</div>
+  <div class="logo-container absolute top-8 left-4 md:top-8 md:left-8 z-50">
+    <a href="./index.html">
+    <span class="logo font-bold font-reidd text-3xl lg:text-3xl no-underline ">RG&nbsp;</span>
+    </a>
+  </div>
   
   <nav class="hidden md:block font-reid absolute top-0 mt-10 right-11 ">
       <ul class="flex space-x-10">
@@ -144,15 +115,12 @@
   </div>
 </div>
 
-
-
-
       
   <div class="min-h-screen flex flex-col md:flex-row">
-    <div class="flex-1 bg-[#E3DED9] flex flex-col items-start  justify-center pb-10 pt-10 md:pb-0 md:pt-0">
+    <div class="flex-1 bg-[#E3DED9] flex flex-col items-start md:items-center justify-center pb-10 pt-10 md:pb-0 md:pt-0">
       <!-- Left half content -->
-      <h1 class="font-reidd text-5xl md:text-4xl lg:text-6xl xl:text-7xl font-extralight mb-4 tracking-wider pl-4 md:pl-8 ">WRITING<span class="animate-pulse-fast">_</span></h1>
-      <p class="font-reid text-md md:text-lg font-medium mb-4 tracking-wider  pl-4 md:pl-8 max-w-sm md:max-w-xl lg:max-w-3xl">It is through the process of writing that I internalize my learnings, transforming abstract ideas into concrete insights.<span class="animate-pulse-fast"></span></h1>
+      <h1 class="font-reidd text-5xl md:text-4xl lg:text-6xl xl:text-7xl font-extralight mb-4 tracking-wider pl-4 md:pl-8">THE REGIONAL BANKING CRISIS: EXPLAINED<span class="animate-pulse-fast">_</span></h1>
+   
 
     </div>
     <div class="flex-1 bg-[#000000] flex justify-center items-center">
@@ -160,73 +128,37 @@
     </div>
   </div>
 
-  <!-- blog posts -->
-  <div class="bg-[#E3DED9] text-black p-8 pb-14 pt-20 md:pt-28">
-    <div class="max-w-4xl mx-auto text-center">
 
-      <!-- Blog Post 2 -->
-      <div class="mb-8 font-reid">
-        <div class="mb-3">
-          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block ">Poem</span>
-        </div>
-        <a href="./blog2.html">
-        <h2 class="font-reid text-3xl font-bold mb-3"><span class="blog-title-span">Sparrow Rise, Sparrow Fall</span></h2>
-        </a>
-        <div class="inline-block mb-3">
-          <span class="font-reid inline-block mr-4">Reid Gajewski</span>
-          <span class="font-reid inline-block">March 23, 2024</span>
-        </div>
-        <hr class="border-gray-700 my-4"/>
-      </div>
+<section class="bg-[#e3ded989]">
+    <div class="max-w-4xl mx-auto pt-20 pb-10 px-4">
 
-      <!-- Blog Post 1 -->
-      <div class="mb-8 font-reid">
-        <div class="mb-3">
-          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block ">Short Essay</span>
-        </div>
-        <a href="./blog/RegionalBankingCrisis.html">
-        <h2 class="font-reid text-3xl font-bold mb-3"><span class="blog-title-span">The Regional Banking Crisis: Explained</span></h2>
-        </a>
-        <div class="inline-block mb-3">
-          <span class="font-reid inline-block mr-4">Reid Gajewski</span>
-          <span class="font-reid inline-block">February 19, 2024</span>
-        </div>
-        <hr class="border-gray-700 my-4"/>
-      </div>
-      
-      <!-- Blog Post 2 -->
-      <div class="mb-8 font-reid">
-        <div class="mb-3">
-          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block">Coming Soon</span>
-        </div>
-       
-        <h2 class=" text-3xl font-bold mb-3"><span class="blog-title-span">What's at the End of the Universe?</span></h2>
-  
-        <div class="inline-block mb-3">
-          <span class="inline-block mr-4">Reid Gajewski</span>
-          <span class="inline-block">April 2, 2024</span>
-        </div>
-        <hr class="border-gray-700 my-4"/>
-      </div>
+        <div class="text-lg space-y-6">
+            <p>
+                Sparrow rise <br>
+                Sparrow fall <br>
+                Sparrow fall <br>
+                Sparrow fly <br>
+                <br>
+                Sparrow dream <br>
+                Sparrow love <br>
+                Sparrow slave <br>
+                Sparrow free <br>
+                <br>
+                Sparrow search <br>
+                Sparrow find <br>
+                Sparrow lose <br>
+                Sparrow cry <br>
+                <br>
+                Sparrow rise <br>
+                Sparrow fall <br>
+                Sparrow fall <br>
+                Sparrow fly <br>
 
-      <!-- Blog Post 3 -->
-      <div class="mb-8 font-reid">
-        <div class="mb-3">
-          <span class="bg-[#F42C04] text-xs text-white font-bold px-2 py-1 rounded inline-block">Coming Soon</span>
+
+            </p>
         </div>
-       
-        <h2 class=" text-3xl font-bold mb-3"><span class="blog-title-span">The Economics of Drug Development</span></h2>
-  
-        <div class="inline-block mb-3">
-          <span class="inline-block mr-4">Reid Gajewski</span>
-          <span class="inline-block">April 14, 2024</span>
-        </div>
-      </div>
-    
     </div>
-  </div>
-  
-  
+</section>
 
 <script>
 

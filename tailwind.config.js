@@ -4,7 +4,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom1: ["Custom-1", "cursive"],
         'reid': ['"IBM Plex Mono"', 'monospace'],
       },
       animation: {
